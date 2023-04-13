@@ -432,10 +432,10 @@ namespace KartGame.KartSystems
             float maxSpeed;
             float accelPower;
 
-            if(Input.GetButtonDown("Fire1")){
+            if(Input.Boost){
                 // use the max speed for the direction we are going--forward or reverse.
-                maxSpeed = localVelDirectionIsFwd ? 500 : m_FinalStats.ReverseSpeed;
-                accelPower = accelDirectionIsFwd ? 250 : m_FinalStats.ReverseAcceleration;
+                maxSpeed = localVelDirectionIsFwd ? m_FinalStats.TopSpeed * 3: m_FinalStats.ReverseSpeed;
+                accelPower = accelDirectionIsFwd ? m_FinalStats.Acceleration * 3 : m_FinalStats.ReverseAcceleration;
             } else {
                 maxSpeed = localVelDirectionIsFwd ? m_FinalStats.TopSpeed : m_FinalStats.ReverseSpeed;
                 accelPower = accelDirectionIsFwd ? m_FinalStats.Acceleration : m_FinalStats.ReverseAcceleration;
